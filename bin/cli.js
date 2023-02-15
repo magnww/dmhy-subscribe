@@ -75,7 +75,7 @@ async function main() {
     .argv;
 
   // No command, update and download all
-  if (!argv._.length) {
+  if (!argv._ || !argv._.length) {
     const db = new Database();
     const downloader = db.config.get('downloader').value;
 
