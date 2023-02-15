@@ -4,8 +4,10 @@ WORKDIR /root
 
 COPY run.sh ./
 
-RUN apk add --no-cache tzdata
+RUN apk add --no-cache tzdata git
 
-RUN chmod +x /root/run.sh && yarn global add dmhy-subscribe
+RUN chmod +x /root/run.sh && \
+  git clone https://github.com/magnww/dmhy-subscribe.git && \
+  yarn global add ./dmhy-subscribe
 
 CMD /root/run.sh
