@@ -34,7 +34,7 @@ module.exports = async(thread, config) => {
   const downloadParams = new URLSearchParams();
   downloadParams.append('urls', thread.link);
   downloadParams.append('savepath', config['destination']);
-  const downloadResponse = await fetch(url.URL('/api/v2/torrents/add', config['qbittorrent-url']), {
+  const downloadResponse = await fetch(new url.URL('/api/v2/torrents/add', config['qbittorrent-url']), {
     method: 'POST',
     headers: {
       Cookie: sid,

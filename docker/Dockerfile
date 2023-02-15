@@ -7,7 +7,7 @@ COPY run.sh ./
 RUN apk add --no-cache tzdata git
 
 RUN chmod +x /root/run.sh && \
-  git clone https://github.com/magnww/dmhy-subscribe.git && \
+  git clone -b qbittorrent-v2 https://github.com/magnww/dmhy-subscribe.git && \
   yarn global add /root/dmhy-subscribe && \
   rm -rf /root/dmhy-subscribe
 
