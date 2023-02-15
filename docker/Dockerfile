@@ -8,6 +8,6 @@ RUN apk add --no-cache tzdata git
 
 RUN chmod +x /root/run.sh && \
   git clone https://github.com/magnww/dmhy-subscribe.git && \
-  yarn global add ./dmhy-subscribe
+  yarn global add /root/dmhy-subscribe
 
 CMD /root/run.sh
