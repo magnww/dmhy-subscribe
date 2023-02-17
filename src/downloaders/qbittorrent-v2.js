@@ -17,7 +17,7 @@ module.exports = async(thread, config) => {
   const loginParams = new URLSearchParams();
   loginParams.append('username', username);
   loginParams.append('password', password);
-  const loginResponse = await fetch(new url.URL('/login', config['qbittorrent-url']), {
+  const loginResponse = await fetch(new url.URL('/api/v2/auth/login', config['qbittorrent-url']), {
     method: 'POST',
     body: loginParams.toString(),
     headers: {
